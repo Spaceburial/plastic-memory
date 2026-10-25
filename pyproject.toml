@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plastic-memory"
+version = "0.4.1"
+description = "A memory for agents that forgets, dreams, and changes its mind — three layers, offline consolidation, half-life compression, crossing personas"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "plastic-memory contributors" }]
+keywords = ["memory", "agent", "llm", "mcp", "rag", "forgetting"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+plastic-memory = "plastic_memory.cli:main"
+plastic-memory-mcp = "plastic_memory.mcp:main"
+
+[project.optional-dependencies]
+# 核心零依赖；这些只是开发时要用的
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["plastic_memory"]
+
+[tool.setuptools.package-data]
+plastic_memory = ["persona.yaml"]

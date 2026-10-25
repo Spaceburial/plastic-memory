@@ -1,0 +1,18 @@
+name: plastic-memory
+version: 0.4.1
+description: "可塑性记忆 — 三层记忆（核心印象 / 事件流 / 即时丢弃）+ 离线梦境巩固 + 半衰期压缩 + 交叉人设。核心区不提供任何导出入口。"
+author: "plastic-memory contributors"
+provides_hooks:
+  - pre_llm_call
+  - post_llm_call
+  - on_session_end
+provides_tools:
+  - pm_status
+  - pm_recall
+  - pm_observe
+  - pm_dream
+  - pm_persona
+  - pm_compact
+  - pm_trace
+  - pm_pin
+  - pm_diary
